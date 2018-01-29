@@ -48,6 +48,13 @@ class TodosController < ApplicationController
          render 'edit'
       end
    end
+    
+   def destroy  
+      @todo = Todo.find(params[:id])
+      @todo.destroy
+      flash[:notice] = "Todo was deleted successfully"
+      redirect_to todos_path
+   end
    
    #Whitelisting Method
    private #Method is only available in this particular controller - TodoController

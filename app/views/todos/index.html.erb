@@ -16,7 +16,8 @@
     <td><%= todo.name %></td>
     <td><%= todo.description %></td>
     <td><%= link_to "Edit", edit_todo_path(todo.id) %></td>
-    <td><%= link_to "Show", todo_path(todo.id) %></td>
+    <td><%= link_to "Show", todo_path(todo.id), method: :get %></td>
+    <td><%= link_to "Delete", todo_path(todo.id), method: :delete, data: {confirm: "Are you sure you want to delete?"} %></td>
   </tr>
   <% end  %>
   
